@@ -4,7 +4,7 @@
 2. Add Github Api key
 
 ```bash
-NEXT_PUBLIC_API_KEY=KEY_GOES_HERE
+NEXT_PUBLIC_GITHUB_API_KEY=KEY_GOES_HERE
 ```
 
 3. Install dependicies

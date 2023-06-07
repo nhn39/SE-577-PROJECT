@@ -13,7 +13,7 @@ export async function GET(
     const commits = await octokit.request(
       `GET /repos/${user.data.login}/${params.name}/commits`
     );
-    return NextResponse.json(commits.data);
+    return NextResponse.json(commits.data, { status: 200 });
   } catch (err) {
     return NextResponse.json(
       { message: "Something went wrong!" },

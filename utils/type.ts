@@ -5,6 +5,11 @@ export interface Repo {
   created_at: string;
   description: string;
   clone_url: string;
+  pushed_at: string;
+  owner: {
+    avatar_url: string;
+    login: string;
+  };
 }
 
 export interface User {
@@ -21,6 +26,7 @@ export interface User {
 }
 
 export interface Commit {
+  sha: string;
   commit: {
     author: {
       name: string;
@@ -33,13 +39,13 @@ export interface Commit {
       date: string;
     };
     message: string;
+    verification: {
+      verified: boolean;
+      signature: string;
+    };
   };
   comments_url: string;
-  commiter: {
+  committer: {
     avatar_url: string;
-  };
-  verification: {
-    verified: boolean;
-    signature: string;
   };
 }

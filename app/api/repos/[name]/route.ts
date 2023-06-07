@@ -15,7 +15,7 @@ export async function GET(
     const repo = await octokit.request(
       `GET /repos/${user.data.login}/${params.name}`
     );
-    return NextResponse.json(repo.data);
+    return NextResponse.json(repo.data, { status: 200 });
   } catch (err) {
     return NextResponse.json(
       { message: "Something went wrong!" },

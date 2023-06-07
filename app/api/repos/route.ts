@@ -8,7 +8,7 @@ export async function GET() {
   });
   try {
     const repos = await octokit.request("GET /user/repos");
-    return NextResponse.json(repos.data);
+    return NextResponse.json(repos.data, { status: 200 });
   } catch (err) {
     return NextResponse.json(
       { message: "Something went wrong!" },
